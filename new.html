@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Component Tag</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/newstyle.css" rel="stylesheet">
+</head>
+<body>
+  <h1 align="center"> Clickable Imges 3 Section</h1>
+  <hr>
+  <!-- Section: SPAN section of 3 clickable images
+      Used classes: circles, row, col-xs-12, col-sm-12, col-md-4, col-lg-4 (main layout classes) (defined in bootstrap.css)
+                    img-responsive, center-block (style for images)
+                    boxhome, shadow (main animation and position classes) ( defined in newstyle.css)
+
+      3 columns layout with clickable images with fade animation
+      Image Size: 640 * 250
+  -->
+  <section name="clickableimages3" class="circles">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="row">
+  			<div class="boxhome">
+  				<a href="services"></a>
+  				<h2>St Helens Car Clinic</h2>
+  				<div class="shadow"></div>
+  				<img src="images/home-1.jpg" alt="St Helens Car Clinic" class="img-responsive center-block" style="height: 250px;" />
+  			</div>
+  		</div>
+    </div>
+  	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  		<div class="row">
+  			<div class="boxhome">
+  				<a href="about"></a>
+  				<h2>Meet The Team</h2>
+  				<div class="shadow"></div>
+  				<img src="images/home-2.jpg" alt="Meet The Team" class="img-responsive center-block" style="height: 250px" />
+  			</div>
+  		</div>
+  	</div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  		<div class="row">
+  			<div class="boxhome">
+  				<a href="testimonials"></a>
+  				<h2>Testimonials</h2>
+  				<div class="shadow"></div>
+  				<img src="images/home-3.jpg" alt="Testimonials" class="img-responsive center-block" />
+  			</div>
+  		</div>
+  	</div>
+  	<div class="clearfix"></div>
+  </section>
+  <hr>
+
+  <!-- Google Map Section
+    Width : 940px;    Height: 500px;
+    This Google Map section imports javascript (This is essential, without javascript code, you can't show Google map)
+    The important variables in javascript:
+      latLng : This variable indicates the lantitude and longitude of the position you are located.
+
+    We create and place map with the id of the div
+      Here the google map id is       map-canvas
+
+  -->
+  <h1 align="center">Google Map Section</h1>
+  <hr>
+  <section class="container marketing content">
+    <div class="t1_footer_map" id="map-canvas" style="width:100%;height:500px;margin-bottom:10px"></div>
+  </section>
+  <hr>
+
+
+  <script src="https://www.dealermanager.co.uk/js/frontend/ie10-viewport-bug-workaround.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5OqYPFSMkv53P18ixCWBujyO06v20Ogg" type="text/javascript"></script>
+  <script type="text/javascript">
+    var directionDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var map;
+    var panorama;
+    var latLng = new google.maps.LatLng(53.44,-2.7139);
+    function openWindow(){
+      var myIcon = new google.maps.MarkerImage("images/location.png", null, null, null, new google.maps.Size(30,41));
+      var dealerMarker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+      var content = '<div style="display:block; width:170px; height:120px;"><p style="color:#333; margin:0; padding:0; line-height:normal;"><strong>St Helens VW Centre</strong><br/>Baxters Lane<br/>St Helens<br/>Merseyside<br/>WA9 3NR</p></div>';
+      var infowindow = new google.maps.InfoWindow({
+        content: content
+      });
+      google.maps.event.addListener(dealerMarker, 'click', function() {
+        infowindow.open(map, dealerMarker);
+      });
+    }
+    function initialize() {
+      directionsDisplay = new google.maps.DirectionsRenderer();
+      var myOptions = {
+        center: latLng,
+        zoom: 13,
+        panControl: true,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: true,
+        overviewMapControl: true,
+        scrollwheel: false,
+        draggable: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+      }
+
+      map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+      directionsDisplay.setMap(map);
+      directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+      panorama = map.getStreetView();
+      panorama.setPosition(latLng);
+      panorama.setPov({
+        heading: 0, /* SPIN STREET VIEW */
+        zoom:1,
+        pitch:0
+      });
+      openWindow();
+    }
+    function clearText(thefield){
+      if (thefield.defaultValue==thefield.value)
+      thefield.value = ''
+    }
+    function calcRoute() {
+      var start = document.getElementById("postcode").value;
+      var request = {
+        origin:start,
+        destination:latLng,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+      };
+      directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        }
+      });
+    }
+    function toggleStreetView() {
+      var toggle = panorama.getVisible();
+      if (toggle == false) {
+        panorama.setVisible(true);
+      } else {
+        panorama.setVisible(false);
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+  <!--
+  Meet the team section with 4 columns
+
+  Classes: container, marketing, content, page-header, row, col-md-3 : Main Layout (bootstrap.css)
+            img-responsive, profile, center-block : Image Layout ( bootstrap.css)
+  -->
+  <section name="meettheteam" class="container marketing content">
+    <div class="page-header">
+      <h1 align="center">Meet the team</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2><strong>Craig McCarthy</strong><br />Director</h2>
+        <img src="images/craig.jpg" alt="Craig McCarthy" class="img-responsive profile center-block" />
+        <hr />
+        <h3>About St Helens VW Centre</h3>
+        <p>Welcome to <strong>St Helens VW Centre</strong> website. My name is <strong>Craig McCarthy</strong> and I am the <strong>Manager</strong> here at <strong>St Helens VW Centre</strong>. We specialise in used cars and aim to pick out cars for you at a reasonable price. Offering a personal, professional service focusing on honesty and integrity, and above all, value for money.</p>
+        <h3>Vehicle Sourcing</h3>
+        <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
+      </div>
+
+      <div class="col-md-3">
+        <h2><strong>Dale Conroy</strong><br />Garage Manager</h2>
+        <img src="images/dale.jpg" alt="Dale Conroy" class="img-responsive profile center-block" />
+        <hr />
+        <p>Hi there my name is <strong>Dale Conroy</strong>, I'm the <strong>Garage Manager</strong> and <strong>Sales Person</strong> here at <strong>St Helens VW Centre</strong>.</p>
+        <p>I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.</p>
+        <p>Sales are also part of my duties and I'm here to assist the rest of the sales team help you, the customer and hopefully friend to be, find the right car for you and one that you are happy with. I consider myself to of had a good day when all of our customers go away happy.</p>
+        <p><strong>So please come down to our garage and sales pitch and we'll be happy to help you with any enquiry.</strong></p>
+      </div>
+
+      <div class="col-md-3">
+        <h2><strong>Gemma Williams</strong><br />Director</h2>
+        <img src="images/gemma.jpg" alt="Gemma Williams" class="img-responsive profile center-block" />
+        <hr />
+        <p>My name is <strong>Gemma Williams</strong> I work within the <strong>Car Sales</strong> department of <strong>St Helens VW Centre</strong> as a sales assistant overseeing the Sales department and helping out with the general everyday administration duties required at the dealership Centre. </p>
+        <p>Please allow us the opportunity to discuss the requirements for your next car or van, we always try to offer the very best in customer service to our customers and believe we operate in an open and friendly manner.</p>
+        <p>Please try us out yourself if you're interested in one of our used cars either call into the office or telephone us on <strong>01744 27022</strong>.</p>
+        <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
+      </div>
+
+      <div class="col-md-3">
+        <h2><strong>Gemma Williams</strong><br />Director</h2>
+        <img src="images/gemma.jpg" alt="Gemma Williams" class="img-responsive profile center-block" />
+        <hr />
+        <p>My name is <strong>Gemma Williams</strong> I work within the <strong>Car Sales</strong> department of <strong>St Helens VW Centre</strong> as a sales assistant overseeing the Sales department and helping out with the general everyday administration duties required at the dealership Centre. </p>
+        <p>Please allow us the opportunity to discuss the requirements for your next car or van, we always try to offer the very best in customer service to our customers and believe we operate in an open and friendly manner.</p>
+        <p>Please try us out yourself if you're interested in one of our used cars either call into the office or telephone us on <strong>01744 27022</strong>.</p>
+        <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <!--
+  4 columns layout of clickable images for MOT
+  Image Size: 260 * 120
+  Classes:
+    Main Layout: page-header, container marketing content, col-md-3, row (bootstrap.css)
+    Image Layout: img-responsive (bootstrap.css)
+  -->
+  <section name="mot_layout4" class="container marketing content">
+    <div class="page-header">
+      <h1 align="center">Our Services</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-3"><img src="images/service-1.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-2.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-3.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-4.jpg" class="img-responsive"></div>
+      <div class="clearfix"></div>
+      <br>
+      <div class="col-md-3"><img src="images/service-5.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-6.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-7.jpg" class="img-responsive"></div>
+      <div class="col-md-3"><img src="images/service-8.jpg" class="img-responsive"></div>
+    </div>
+  </section>
+  <hr>
+</body>
+</html>
