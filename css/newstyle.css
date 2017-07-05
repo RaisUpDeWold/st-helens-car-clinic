@@ -1,3 +1,8 @@
+@font-face {font-family: 'BlairITCStd';src: url('../fonts/30BA9E_0_0.eot');src: url('../fonts/30BA9E_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30BA9E_0_0.woff2') format('woff2'),url('../fonts/30BA9E_0_0.woff') format('woff'),url('../fonts/30BA9E_0_0.ttf') format('truetype');}
+@font-face {font-family: 'BlairITCStd-Bold';src: url('../fonts/30BA9E_1_0.eot');src: url('../fonts/30BA9E_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30BA9E_1_0.woff2') format('woff2'),url('../fonts/30BA9E_1_0.woff') format('woff'),url('../fonts/30BA9E_1_0.ttf') format('truetype');}
+@font-face {font-family: 'BlairITCStd-Light';src: url('../fonts/30BA9E_2_0.eot');src: url('../fonts/30BA9E_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30BA9E_2_0.woff2') format('woff2'),url('../fonts/30BA9E_2_0.woff') format('woff'),url('../fonts/30BA9E_2_0.ttf') format('truetype');}
+@font-face {font-family: 'Bank Gothic Light BT';src: url('../fonts/2EF970_0_0.eot');src: url('../fonts/2EF970_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2EF970_0_0.woff2') format('woff2'),url('../fonts/2EF970_0_0.woff') format('woff'),url('../fonts/2EF970_0_0.ttf') format('truetype');}
+
 /*
 	Common Styles
 */
@@ -5,6 +10,10 @@ body {
 	color: #333;
 	font-size: 14px;
 	font-family: 'Oxygen', sans-serif;
+}
+
+h1,h2,h3 {
+	font-family: 'Bank Gothic Light BT'
 }
 
 h1,h2{
@@ -310,7 +319,7 @@ Custom Navigation Bar */
 
 /* Advertisement Section */
 .adspace {
-	/*min-height: 250px;*/
+	min-height: 250px;
 }
 
 /*-- Flexisel Styles --*/
