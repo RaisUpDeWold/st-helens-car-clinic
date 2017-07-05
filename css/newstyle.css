@@ -320,6 +320,9 @@ Custom Navigation Bar */
 /* Advertisement Section */
 .adspace {
 	min-height: 250px;
+	max-height: 250px;
+	min-width: 300px;
+	max-width: 300px;
 }
 
 /*-- Flexisel Styles --*/
@@ -367,7 +370,10 @@ display: none;
 	line-height:0px;
 }
 .nbs-flexisel-item img {
-	max-width: 100%;
+	/*max-width: 100%;
+	min-width: 100%;*/
+	max-height: 230px;
+	min-height: 230px;
 	cursor: pointer;
 	position: relative;
 	margin-top: 10px;
