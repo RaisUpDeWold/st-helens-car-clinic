@@ -7,7 +7,7 @@
   <title>Component Tag</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/newstyle.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -17,7 +17,8 @@
 <body data-spy="scroll" data-target="topnav">
   <!--  HEADER (Navigation Bar with Phone Number) : Fixed Navigation Bar
       Always on top -->
-  <div class="headerbg">
+  <link href="css/headerbg.css" rel="stylesheet">
+  <div class="headerbg" name="headerbg">
     <div class="container header">
       <div class="col-xs-12 col-sm-3">
         <a href="">
@@ -26,23 +27,23 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.
-        I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.
-        I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.
-        I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.
       </div>
       <div class="col-xs-12 col-sm-3 tels">
         <a href="TEL:0174427022">01744 27022</a>
-        <span><a href="TEL:"></a></span></div>
+        <span><a href="TEL:"></a></span>
       </div>
     </div>
+  </div>
   <div class="clearfix"></div>
 
-  <nav class="navbar-wrapper">
+  <!-- Navigation Bar -->
+  <link href="css/navigationbar.css" rel="stylesheet">
+  <nav class="navbar-wrapper" name="navigationbar">
     <div class="container">
       <div class="navbar navbar-default topnav" role="navigation">
         <div class="container">
           <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topnav">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topNavBar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -50,7 +51,7 @@
             </button>
             <div class="navbar-brand">Menu</div>
           </div>
-          <div class="navbar-collapse collapse" id="topnav">
+          <div class="navbar-collapse collapse" id="topNavBar">
   					<ul class="nav navbar-nav">
   						<li class="active"><a href="#clickableimage3">Home</a></li>
   						<li><a class="page-scroll" href="#locationMap">Location Map</a></li>
@@ -64,31 +65,7 @@
       </div>
     </div>
   </nav>
-
-  <script type="text/javascript">
-    var bottom = $('.topnav').offset().top;
-    //jQuery to collapse the navbar on scroll
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > bottom) {
-        $('.topnav').addClass('navbar-fixed-top');
-        $('.topnav').addClass('top-nav-collapse');
-      } else {
-        $('.topnav').removeClass('navbar-fixed-top');
-        $('.topnav').removeClass('top-nav-collapse');
-      }
-    });
-
-    //jQuery for page scrolling feature - requires jQuery Easing plugin
-    $(function() {
-      $(document).on('click', 'a.page-scroll', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-      });
-    });
-  </script>
+  <script src="js/navigationbar.js"></script>
 
   <!-- Section: SPAN section of 3 clickable images
       Used classes: circles, row, col-xs-12, col-sm-12, col-md-4, col-lg-4 (main layout classes) (defined in bootstrap.css)
@@ -98,7 +75,8 @@
       3 columns layout with clickable images with fade animation
       Image Size: 640 * 250
   -->
-  <section name="clickableimages3" id="clickableimage3" class="content-section circles">
+  <link href="css/clickableimage3.css" rel="stylesheet">
+  <section name="clickableimages3" id="clickableimage3" class=" circles">
     <div class="page-header">
       <h1 align="center"> Clickable Imges 3 Section</h1>
     </div>
@@ -146,96 +124,17 @@
       Here the google map id is       map-canvas
 
   -->
-
-  <section name="locationMap" id="locationMap" class="content-section container marketing content">
+  <link href="css/locationMap.css" rel="stylesheet">
+  <section name="locationMap" id="locationMap" class=" container marketing content">
     <div class="page-header">
       <h1 align="center">Google Map Section</h1>
     </div>
     <div class="t1_footer_map" id="map-canvas" style="width:100%;height:500px;margin-bottom:10px"></div>
     <hr>
   </section>
-
-
   <script src="https://www.dealermanager.co.uk/js/frontend/ie10-viewport-bug-workaround.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5OqYPFSMkv53P18ixCWBujyO06v20Ogg" type="text/javascript"></script>
-  <script type="text/javascript">
-    var directionDisplay;
-    var directionsService = new google.maps.DirectionsService();
-    var map;
-    var panorama;
-    var latLng = new google.maps.LatLng(53.44,-2.7139);
-    function openWindow(){
-      var myIcon = new google.maps.MarkerImage("images/location.png", null, null, null, new google.maps.Size(30,41));
-      var dealerMarker = new google.maps.Marker({
-        position: latLng,
-        map: map,
-        animation: google.maps.Animation.DROP
-      });
-      var content = '<div style="display:block; width:170px; height:120px;"><p style="color:#333; margin:0; padding:0; line-height:normal;"><strong>St Helens VW Centre</strong><br/>Baxters Lane<br/>St Helens<br/>Merseyside<br/>WA9 3NR</p></div>';
-      var infowindow = new google.maps.InfoWindow({
-        content: content
-      });
-      google.maps.event.addListener(dealerMarker, 'click', function() {
-        infowindow.open(map, dealerMarker);
-      });
-    }
-    function initialize() {
-      directionsDisplay = new google.maps.DirectionsRenderer();
-      var myOptions = {
-        center: latLng,
-        zoom: 13,
-        panControl: true,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: true,
-        streetViewControl: true,
-        overviewMapControl: true,
-        scrollwheel: false,
-        draggable: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
-      }
-
-      map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-      directionsDisplay.setMap(map);
-      directionsDisplay.setPanel(document.getElementById("directionsPanel"));
-      panorama = map.getStreetView();
-      panorama.setPosition(latLng);
-      panorama.setPov({
-        heading: 0, /* SPIN STREET VIEW */
-        zoom:1,
-        pitch:0
-      });
-      openWindow();
-    }
-    function clearText(thefield){
-      if (thefield.defaultValue==thefield.value)
-      thefield.value = ''
-    }
-    function calcRoute() {
-      var start = document.getElementById("postcode").value;
-      var request = {
-        origin:start,
-        destination:latLng,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL
-      };
-      directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        }
-      });
-    }
-    function toggleStreetView() {
-      var toggle = panorama.getVisible();
-      if (toggle == false) {
-        panorama.setVisible(true);
-      } else {
-        panorama.setVisible(false);
-      }
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+  <script src="js/locationMap.js"></script>
 
   <!--
   Meet the team section with 4 columns
@@ -243,50 +142,39 @@
   Classes: container, marketing, content, page-header, row, col-md-3 : Main Layout (bootstrap.css)
             img-responsive, profile, center-block : Image Layout ( bootstrap.css)
   -->
-  <section name="meettheteam" id="meettheteam" class="content-section container marketing content">
+  <link href="css/meettheteam.css" rel="stylesheet">
+  <section name="meettheteam" id="meettheteam" class=" container marketing content">
     <div class="container">
       <div class="row">
         <h1 align="center">Meet the team</h1>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
           <h2><strong>Craig McCarthy</strong><br />Director</h2>
           <img src="images/craig.jpg" alt="Craig McCarthy" class="img-responsive profile center-block" />
           <hr />
-          <h3>About St Helens VW Centre</h3>
-          <p>Welcome to <strong>St Helens VW Centre</strong> website. My name is <strong>Craig McCarthy</strong> and I am the <strong>Manager</strong> here at <strong>St Helens VW Centre</strong>. We specialise in used cars and aim to pick out cars for you at a reasonable price. Offering a personal, professional service focusing on honesty and integrity, and above all, value for money.</p>
-          <h3>Vehicle Sourcing</h3>
-          <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
-        </div>
-
-        <div class="col-md-3">
-          <h2><strong>Dale Conroy</strong><br />Garage Manager</h2>
-          <img src="images/dale.jpg" alt="Dale Conroy" class="img-responsive profile center-block" />
-          <hr />
-          <p>Hi there my name is <strong>Dale Conroy</strong>, I'm the <strong>Garage Manager</strong> and <strong>Sales Person</strong> here at <strong>St Helens VW Centre</strong>.</p>
-          <p>I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.</p>
-          <p>Sales are also part of my duties and I'm here to assist the rest of the sales team help you, the customer and hopefully friend to be, find the right car for you and one that you are happy with. I consider myself to of had a good day when all of our customers go away happy.</p>
           <p><strong>So please come down to our garage and sales pitch and we'll be happy to help you with any enquiry.</strong></p>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <h2><strong>Dale Conroy</strong><br />Garage Manager</h2>
+          <img src="images/dale.jpg" alt="Dale Conroy" class="img-responsive profile center-block" />
+          <hr />
+          <p><strong>So please come down to our garage and sales pitch and we'll be happy to help you with any enquiry.</strong></p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
           <h2><strong>Gemma Williams</strong><br />Director</h2>
           <img src="images/gemma.jpg" alt="Gemma Williams" class="img-responsive profile center-block" />
           <hr />
-          <p>My name is <strong>Gemma Williams</strong> I work within the <strong>Car Sales</strong> department of <strong>St Helens VW Centre</strong> as a sales assistant overseeing the Sales department and helping out with the general everyday administration duties required at the dealership Centre. </p>
-          <p>Please allow us the opportunity to discuss the requirements for your next car or van, we always try to offer the very best in customer service to our customers and believe we operate in an open and friendly manner.</p>
-          <p>Please try us out yourself if you're interested in one of our used cars either call into the office or telephone us on <strong>01744 27022</strong>.</p>
           <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
           <h2><strong>Gemma Williams</strong><br />Director</h2>
           <img src="images/gemma.jpg" alt="Gemma Williams" class="img-responsive profile center-block" />
           <hr />
-          <p>My name is <strong>Gemma Williams</strong> I work within the <strong>Car Sales</strong> department of <strong>St Helens VW Centre</strong> as a sales assistant overseeing the Sales department and helping out with the general everyday administration duties required at the dealership Centre. </p>
-          <p>Please allow us the opportunity to discuss the requirements for your next car or van, we always try to offer the very best in customer service to our customers and believe we operate in an open and friendly manner.</p>
           <p>Please try us out yourself if you're interested in one of our used cars either call into the office or telephone us on <strong>01744 27022</strong>.</p>
-          <p><strong>Thank you for taking the time to visit our website, we look forward to meeting you, and being of assistance to you.</strong></p>
         </div>
       </div>
     </div>
@@ -300,21 +188,24 @@
     Main Layout: page-header, container marketing content, col-md-3, row (bootstrap.css)
     Image Layout: img-responsive (bootstrap.css)
   -->
-  <section name="mot_layout4" id="mot_layout4" class="content-section container marketing content">
+  <link href="css/mot_layout4.css" rel="stylesheet">
+  <section name="mot_layout4" id="mot_layout4" class=" container marketing content">
     <div class="container">
       <div class="row">
         <h1 align="center">Our Services</h1>
         <hr>
-        <div class="col-md-3"><img src="images/service-1.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-2.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-3.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-4.jpg" class="img-responsive"></div>
-        <div class="clearfix"></div>
-        <br>
-        <div class="col-md-3"><img src="images/service-5.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-6.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-7.jpg" class="img-responsive"></div>
-        <div class="col-md-3"><img src="images/service-8.jpg" class="img-responsive"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-1.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-2.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-3.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-4.jpg" class="img-responsive"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-5.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-6.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-7.jpg" class="img-responsive"></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 serviceImg"><img src="images/service-8.jpg" class="img-responsive"></div>
       </div>
     </div>
   </section>
@@ -322,39 +213,37 @@
   <!-- Image List with Text Section
     Image Size: 350 * 200
     Classes:
-      content-section, container, marketing, content, clearfix, col-xs-12,
+      , container, marketing, content, clearfix, col-xs-12,
       col-sm-6, col-md-4, space, visible-xs  : Layout (bootstrap.css)
 
       img-responsive, : Feature Class
   -->
-  <section name="imageList" id="imageList" class="content-section container marketing content">
+  <link href="css/imageList.css" rel="stylesheet">
+  <section name="imageList" id="imageList" class="container marketing content">
     <!-- Featured Content ================================================== -->
     <h2>Used Cars St Helens, Second Hand Cars St Helens,<br />St Helens VW Centre</h2>
     <p>When looking for <strong>quality used cars</strong> in <strong>St Helens</strong> your first choice should be <strong>St Helens VW Centre</strong>. We have a <strong>fantastic selection of quality used cars</strong> to choose from so we are sure to have the ideal second hand car for you at the right price. Based in <strong>Baxters Lane St Helens</strong> we boast of many satisfied customers from <strong>St Helens</strong> and the surrounding areas of <strong>Warrington, Wigan, Skelmersdale, Liverpool</strong> and beyond.</p>
-    <p>We specialise in <strong>Volkswagen</strong> and aim to pick out cars for you at a reasonable price. Our stock includes a hand-picked selection of used cars from <strong>Volkswagen</strong> and other leading manufacturers such as <strong>Seat, Ford, Chevrolet, Land Rover, Renault, Mini</strong> and <strong>Suzuki</strong>. We also stock a range of Volkswagen T4 &amp; T5 Transporters. All vehicles are professionally valeted and come with full mot &amp; service and 6 months' warranty.</p>
-    <p>Full dealer facilities are available including finance, warranties and part exchange.</p>
-    <hr />
     <div class="clearfix"></div>
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img1.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img1.jpg" class="img-responsive center-block"/>
         <h3>No-Nonsense Finance Deals</h3>
-        <p>We can arrange <a href="finance">Used Car Finance</a> to assist with the purchase of your new car &#8230;</p>
+        <p>We can arrange ssist with the purchase of your new car &#8230;</p>
         <div class="clearfix"></div>
         <div class="space visible-xs"></div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img2.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img2.jpg" class="img-responsive center-block"/>
         <h3>Great Deals on Part Exchange</h3>
-        <p>Trade in your old car to help finance your new one, we are happy to offer you a no obligation quote on vehicle part exchange &#8230;</p>
+        <p>Trade in your old car to help finance your new one, we are happy to offer you a no obligation &#8230;</p>
         <div class="clearfix"></div>
         <div class="space visible-xs"></div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img3.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img3.jpg" class="img-responsive center-block"/>
         <h3>Used Cars Bought</h3>
-        <p>If you're considering selling you current car outright let us give you a quote, we pay great prices for all cars in good condition as <a href="we-buy-cars">We Buy Cars for Cash</a> &#8230;</p>
+        <p>If you're considering selling you current car outright let us give you a quote &#8230;</p>
         <div class="clearfix"></div>
         <div class="space visible-xs"></div>
       </div>
@@ -363,24 +252,24 @@
     <div class="clearfix"></div>
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img4.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img4.jpg" class="img-responsive center-block"/>
         <h3>Vehicle Sourcing</h3>
         <p>If a vehicle meeting your requirements is not in stock, please <a href="contact">contact us</a> as we can most certainly source the car for you. Any vehicle sourced will have to meet our own high standards prior to being passed on to our customers &#8230;</p>
         <div class="clearfix"></div>
         <div class="space visible-xs"></div>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img5.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img5.jpg" class="img-responsive center-block"/>
         <h3>Warranty Options Available</h3>
         <p>For peace of mind motoring we offer warranties on our cars with <a href="warranty">Warrantywise</a> who have many years' experience in the motor industry &#8230;</p>
         <div class="clearfix"></div>
         <div class="space visible-xs"></div>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <img src="images/img6.jpg" class="img-responsive"/>
+      <div class="col-xs-12 col-sm-4 col-md-4 text-center">
+        <img src="images/img6.jpg" class="img-responsive center-block"/>
         <h3>Contact St Helens VW Centre</h3>
         <p>Telephone numbers, opening hours and enquiry forms are available on our <a href="contact">Contact Us</a> page &#8230;</p>
         <div class="clearfix"></div>
@@ -401,7 +290,8 @@
     Slider Image Size: height: 230px
     AdSpace Image Size: 300 * 250
   -->
-  <section name="advertiseSection" id="advertiseSection" class="content-section">
+  <link href="css/advertisement.css" rel="stylesheet">
+  <section name="advertiseSection" id="advertiseSection" class="">
     <div class="container">
       <h1 align="center">Advertisement</h1>
       <hr />
@@ -423,24 +313,13 @@
       </div>
     </div>
   </section>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $("#servicesFlexisel").flexisel({
-        visibleItems: 3,
-        itemsToScroll: 1,
-        autoPlay: {
-          enable: true,
-          interval: 3000,
-          pauseOnHover: true
-        }
-      });
-    });
-  </script>
+  <script src="js/advertisement.js"></script>
 
 
   <!-- Footer Page -->
   <hr>
-  <div class="footer-colour">
+  <link href="css/myFooter.css" rel="stylesheet">
+  <div class="footer-colour" name="myFooter">
     <div class="base_links container">
       <ul class="list-inline">
         <li class="active"><a href="#clickableimages3">Home</a></li>
