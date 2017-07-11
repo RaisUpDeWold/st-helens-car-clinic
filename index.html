@@ -18,22 +18,32 @@
   <!--  HEADER (Navigation Bar with Phone Number) : Fixed Navigation Bar
       Always on top -->
   <link href="css/headerbg.css" rel="stylesheet">
-  <div class="headerbg" name="headerbg">
+  <section class="headerbg" name="headerbg" style="padding-top: 0px;" id="headerbg">
     <div class="container header">
-      <div class="col-xs-12 col-sm-3">
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <a href="">
           <img src="images/logo.png" class="img-responsive" alt="St Helens VW Centre"/>
         </a>
       </div>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
         I'm a qualified motor vehicle engineer and have over 30 years experience in the motor trade and transport industry. My duties are to ensure the vehicles either sold by us or brought to us for repair are done so professionally and as efficiently as possible.
       </div>
-      <div class="col-xs-12 col-sm-3 tels">
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 tels">
         <a href="TEL:0174427022">01744 27022</a>
         <span><a href="TEL:"></a></span>
       </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-9 col-lg-3 col-lg-offset-9 socialicons" style="margin-top: 20px;">
+        <div class="agileinfo_social_icons">
+          <ul class="agileits_social_list">
+            <li> <a href="#" class="w3_agile_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+            <li> <a href="#" class="agile_twitter"> <i class="fa fa-twitter" aria-hidden="true"></i> </a> </li>
+            <li> <a href="#" class="w3_agile_dribble"> <i class="fa fa-dribbble" aria-hidden="true"></i> </a> </li>
+            <li> <a href="#" class="w3_agile_rss"> <i class="fa fa-rss" aria-hidden="true"></i> </a> </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
   <div class="clearfix"></div>
 
   <!-- Navigation Bar -->
@@ -53,19 +63,108 @@
           </div>
           <div class="navbar-collapse collapse" id="topNavBar">
   					<ul class="nav navbar-nav">
-  						<li class="active"><a href="#clickableimage3">Home</a></li>
+  						<li class="active"><a href="#headerbg">Home</a></li>
   						<li><a class="page-scroll" href="#locationMap">Location Map</a></li>
               <li><a class="page-scroll" href="#meettheteam">Meet the team</a></li>
               <li><a class="page-scroll" href="#mot_layout4">Our Services</a></li>
               <li><a class="page-scroll" href="#imageList">Car List</a></li>
               <li><a class="page-scroll" href="#advertiseSection">Advertisement</a></li>
+              <li><a class="page-scroll" href="blog.html" style="color: red;">News</a></li>
   					</ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div class="agileinfo_social_icons" id="navigationSocialButtonGroup" name="navigationSocialButtonGroup" style="display: none">
+                  <ul class="agileits_social_list">
+                    <li> <a href="#" class="w3_agile_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                    <li> <a href="#" class="agile_twitter"> <i class="fa fa-twitter" aria-hidden="true"></i> </a> </li>
+                    <li> <a href="#" class="w3_agile_dribble"> <i class="fa fa-dribbble" aria-hidden="true"></i> </a> </li>
+                    <li> <a href="#" class="w3_agile_rss"> <i class="fa fa-rss" aria-hidden="true"></i> </a> </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </nav>
   <script src="js/navigationbar.js"></script>
+
+  <link href="css/newsSection.css" rel="stylesheet">
+  <section name="newsSection" id="newsSection" class="container marketing content">
+    <div class="page-header">
+      <h1 align="center">Latest news</h1>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+      <article class="blog-tester">
+        <header>
+          <img src="images/img1.jpg" alt="Image1" class="img-responsive">
+          <h3>
+            <a href="blog.html">Image1</a>
+          </h3>
+          <span class="meta">24 July 2013, Alexander Rechsteiner</span>
+        </header>
+        <div class="body">
+          Bacon ipsum dolor sit amet esse duis pastrami anim, pancetta fatback capicola officia tenderloin. Meatloaf culpa ut.
+        </div>
+        <div class="clearfix">
+          <a href="blog.html#latestnews1" class="btn btn-tales-one">Read more</a>
+        </div>
+      </article>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+      <article class="blog-tester">
+        <header>
+          <img src="images/img4.jpg" alt="Image4" class="img-responsive">
+          <h3>
+            <a href="blog.html">Image4</a>
+          </h3>
+          <span class="meta">24 July 2013, Alexander Rechsteiner</span>
+        </header>
+        <div class="body">
+          Bacon ipsum dolor sit amet esse duis pastrami anim, pancetta fatback capicola officia tenderloin. Meatloaf culpa ut.
+        </div>
+        <div class="clearfix">
+          <a href="blog.html#latestnews2" class="btn btn-tales-one">Read more</a>
+        </div>
+      </article>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+      <article class="blog-tester">
+        <header>
+          <img src="images/img2.jpg" alt="Image1" class="img-responsive">
+          <h3>
+            <a href="blog.html">Image2</a>
+          </h3>
+          <span class="meta">24 July 2013, Alexander Rechsteiner</span>
+        </header>
+        <div class="body">
+          Bacon ipsum dolor sit amet esse duis pastrami anim, pancetta fatback capicola officia tenderloin. Meatloaf culpa ut.
+        </div>
+        <div class="clearfix">
+          <a href="blog.html#latestnews3" class="btn btn-tales-one">Read more</a>
+        </div>
+      </article>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+      <article class="blog-tester">
+        <header>
+          <img src="images/img3.jpg" alt="Image1" class="img-responsive">
+          <h3>
+            <a href="blog.html">Image3</a>
+          </h3>
+          <span class="meta">24 July 2013, Alexander Rechsteiner</span>
+        </header>
+        <div class="body">
+          Bacon ipsum dolor sit amet esse duis pastrami anim, pancetta fatback capicola officia tenderloin. Meatloaf culpa ut.
+        </div>
+        <div class="clearfix">
+          <a href="blog.html#latestnews4" class="btn btn-tales-one">Read more</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- Section: SPAN section of 3 clickable images
       Used classes: circles, row, col-xs-12, col-sm-12, col-md-4, col-lg-4 (main layout classes) (defined in bootstrap.css)
@@ -76,10 +175,10 @@
       Image Size: 640 * 250
   -->
   <link href="css/clickableimage3.css" rel="stylesheet">
-  <section name="clickableimages3" id="clickableimage3" class=" circles">
-    <div class="page-header">
+  <section name="clickableimages3" id="clickableimage3" class="circles" style="padding-top: 0px;">
+    <!--<div class="page-header">
       <h1 align="center"> Clickable Imges 3 Section</h1>
-    </div>
+    </div>-->
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <div class="row">
   			<div class="boxhome">
@@ -112,7 +211,6 @@
   	</div>
   	<div class="clearfix"></div>
   </section>
-  <hr>
 
   <!-- Google Map Section
     Width : 940px;    Height: 500px;
@@ -125,7 +223,7 @@
 
   -->
   <link href="css/locationMap.css" rel="stylesheet">
-  <section name="locationMap" id="locationMap" class=" container marketing content">
+  <section name="locationMap" id="locationMap" class="container marketing content">
     <div class="page-header">
       <h1 align="center">Google Map Section</h1>
     </div>
@@ -143,9 +241,9 @@
             img-responsive, profile, center-block : Image Layout ( bootstrap.css)
   -->
   <link href="css/meettheteam.css" rel="stylesheet">
-  <section name="meettheteam" id="meettheteam" class=" container marketing content">
+  <section name="meettheteam" id="meettheteam" class="container marketing content">
     <div class="container">
-      <div class="row">
+      <div class="page-header">
         <h1 align="center">Meet the team</h1>
       </div>
       <div class="row">
@@ -157,7 +255,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <h2><strong>Dale Conroy</strong><br />Garage Manager</h2>
+          <h2><strong>Daley Conroy</strong><br />Manager</h2>
           <img src="images/dale.jpg" alt="Dale Conroy" class="img-responsive profile center-block" />
           <hr />
           <p><strong>So please come down to our garage and sales pitch and we'll be happy to help you with any enquiry.</strong></p>
@@ -288,7 +386,7 @@
     Advertisement Section
 
     Slider Image Size: height: 230px
-    AdSpace Image Size: 300 * 250
+    AdSpace Image Size used: 800 * 600 (Width is automatically calculated due to the screen size, height is fixed)
   -->
   <link href="css/advertisement.css" rel="stylesheet">
   <section name="advertiseSection" id="advertiseSection" class="">
@@ -297,18 +395,38 @@
       <hr />
 
       <div class="row">
-        <div class="col-md-4 text-center">
-          <img src="images/adspace.jpg" alt="" style="adspace" />
-        </div>
-        <div class="col-md-8">
-          <ul id="servicesFlexisel">
-            <li><img src="images/img1.jpg" alt="" /></li>
-            <li><img src="images/img2.jpg" alt="" /></li>
-            <li><img src="images/img3.jpg" alt="" /></li>
-            <li><img src="images/img4.jpg" alt="" /></li>
-          </ul>
-          <div class="clearout"></div>
-          <hr>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/slide1.jpg" alt="Image1" style="width: 100%; height: 300px;">
+              </div>
+              <div class="item">
+                <img src="images/slide2.jpg" alt="Image2" style="width: 100%; height: 300px">
+              </div>
+              <div class="item">
+                <img src="images/slide3.jpg" alt="Image3" style="width: 100%; height: 300px;">
+              </div>
+            </div>
+
+            <!-- Left and Right Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -322,12 +440,13 @@
   <div class="footer-colour" name="myFooter">
     <div class="base_links container">
       <ul class="list-inline">
-        <li class="active"><a href="#clickableimages3">Home</a></li>
-        <li><a class="page-scroll" href="#googleMap">Location Map</a></li>
-        <li><a class="page-scroll" href="#meettheteam">Meet the team</a></li>
-        <li><a class="page-scroll" href="#mot_layout4">Our Services</a></li>
-        <li><a class="page-scroll" href="#imageList">Car List</a></li>
-        <li><a class="page-scroll" href="#advertiseSection">Advertisement</a></li>
+        <li><a href="index.html#headerbg">Home</a></li>
+        <li><a class="page-scroll" href="index.html#googleMap">Location Map</a></li>
+        <li><a class="page-scroll" href="index.html#meettheteam">Meet the team</a></li>
+        <li><a class="page-scroll" href="index.html#mot_layout4">Our Services</a></li>
+        <li><a class="page-scroll" href="index.html#imageList">Car List</a></li>
+        <li><a class="page-scroll" href="index.html#advertiseSection">Advertisement</a></li>
+        <li class="active"><a class="page-scroll" href="blog.html" style="color: red;">News</a></li>
       </ul>
     </div>
     <footer class="footer">
@@ -343,8 +462,7 @@
            </address>
            <a href="terms">Terms</a> //
            <a href="http://www.azizimotors.co.uk/" target="_blank">Site Design</a> //
-           <a href="http://validator.w3.org/check/referer" target="_blank">Valid XHTML</a> //
-           <a class="top" href="#top" target="_top">Top ^</a>
+           <a href="http://validator.w3.org/check/referer" target="_blank">Valid XHTML</a>
          </div>
          <div class="col-md-6 text-center">
            <h2>Social</h2>
@@ -355,6 +473,9 @@
              <li class="col-xs-4 col-sm-4">
                <a href="http://twitter.com/The_Volkswagen" target="_blank"><img src="https://www.dealermanager.co.uk/images/frontend//twitter.png" alt="Twitter" /></a>
              </li>
+             <li class="col-xs-4 col-sm-4">
+               <a href="http://twitter.com/The_Volkswagen" target="_blank"><img src="https://www.dealermanager.co.uk/images/frontend//linkedin.png" alt="LinkedIn" /></a>
+             </li>
            </ul>
            <img src="https://www.dealermanager.co.uk/images/frontend/cards.png" alt="Most Major Credit/Debit Cards Accepted" />
          </div>
@@ -362,5 +483,6 @@
        </div>
      </div>
    </footer>
+ </div>
 </body>
 </html>
